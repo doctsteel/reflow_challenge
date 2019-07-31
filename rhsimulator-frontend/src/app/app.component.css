@@ -1,0 +1,13 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+div.view-container {
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 940px;
+}
+
+mat-toolbar {
+  position: fixed;
+  z-index: 1000;
+}

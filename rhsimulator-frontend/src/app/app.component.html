@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<mat-toolbar color="primary" class="mat-elevation-z10">
+  <button mat-button routerLink="/">RHSimulator</button>
+  <button mat-button routerLink="/about">Sobre</button>
+  <span class="fill-remaining-space"></span>
+  <button mat-button [matMenuTriggerFor]="belowMenu" *ngIf="authenticated">{{userProfile.name}}</button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item routerLink="/profile">Profile</button>
+    <button mat-menu-item (click)="signOut()"> Log out</button>
+  </mat-menu>
+  <button mat-button (click)="signIn()" *ngIf="!authenticated">Log in</button>
+<!--  <button mat-button (click)="signOut()" *ngIf="authenticated">Log out</button>-->
+</mat-toolbar>
+<div class="view-container">
+  <router-outlet>carregando...</router-outlet>
+</div>

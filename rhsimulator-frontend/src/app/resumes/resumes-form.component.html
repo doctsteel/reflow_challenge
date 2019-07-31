@@ -1,0 +1,13 @@
+<mat-card class="text-center">
+  <h2>Novo currículo</h2>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Nome" (keyup)="updateName($event)">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Título(40 caracteres no máximo)" (keyup)="updateContent($event)">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <textarea rows="8" matInput placeholder="Currículo vem aqui!" (keyup)="updateCurriculum($event)"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="saveResume()">Salvar currículo</button>
+</mat-card>

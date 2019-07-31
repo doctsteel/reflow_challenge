@@ -1,0 +1,33 @@
+<div *ngIf="authenticated">
+<div class="row">
+<div class="col-sm-4">
+<div class="leftbar">
+  <h1> Currículos </h1>
+  <mat-form-field class="text-center">
+  <input matInput placeholder="Busca" [(ngModel)]="filterText">
+</mat-form-field>
+</div>
+</div>
+<div class="cvs col-sm-8">
+  <mat-card class="card-cv" *ngFor="let cv of resumesList | filter : filterText">
+    <mat-card-content>
+      <mat-card-title>{{cv.name}}</mat-card-title>
+      <mat-card-subtitle>{{cv.content}}</mat-card-subtitle>
+      <p></p>
+      <mat-card-actions align="end">
+      <button mat-button [routerLink]="">Editar currículo</button>
+      <button mat-button [routerLink]="['/detalhes', cv.id]">Ver currículo</button>
+      <button mat-button id="xis"  *ngIf="isAdmin()" (click)="delete(cv.id)"><i class="material-icons">clear</i></button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>
+<button mat-fab color="primary" *ngIf="authenticated" class="new-resume" routerLink="/new-resume">
+  <i class="material-icons">note_add</i>
+</button>
+</div>
+<div class="text-center"*ngIf="!authenticated">
+  <h1>Você não está logado, por favor faça o login!</h1>
+  <h3>Dica, pra esse site de testes, id "admin" e senha "admin", serve!</h3>
+</div>

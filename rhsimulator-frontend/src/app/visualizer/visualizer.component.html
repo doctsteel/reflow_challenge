@@ -1,0 +1,7 @@
+<mat-card class=" text-center">
+  <mat-form-field class="full-width"> <input matInput value="{{resume.name}}" (keyup)="updateName($event)"></mat-form-field>
+  <mat-form-field class="full-width"><input matInput value="{{resume.content}}" (keyup)="updateContent($event)"></mat-form-field>
+  <mat-form-field class="full-width"><textarea rows="8" matInput (keyup)="updateCurriculum($event)"> {{resume.curriculum}}</textarea></mat-form-field>
+</mat-card>
+<button mat-raised-button color="primary" routerLink="/">Retornar</button>
+<button mat-raised-button color="accent" (click)="saveEdits()">Salvar edições</button>
